@@ -1,3 +1,4 @@
+version ="1.0.0"
 buildscript {
     ext {
         springBootVersion = '1.2.4.RELEASE'
@@ -13,9 +14,9 @@ buildscript {
 
 allprojects {
     if (project.hasProperty('buildversion')) {
-        project.version = project.buildversion
+        project.version = version+'-'+buildversion
     } else {
-        project.version = '1.0.0'
+        project.version = version
     }
 }
 
