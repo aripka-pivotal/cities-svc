@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.0.2.RELEASE'
+        springBootVersion = '1.2.4.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -15,7 +15,7 @@ allprojects {
     if (project.hasProperty('buildversion')) {
         project.version = project.buildversion
     } else {
-        project.version = '1.0'
+        project.version = '1.0.0'
     }
 }
 
@@ -27,6 +27,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+
+mainClassName=''
 
 repositories {
     mavenCentral()
@@ -46,6 +48,3 @@ dependencies {
     runtime("org.hsqldb:hsqldb")
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.12'
-}
